@@ -35,95 +35,102 @@ import CloudServices from "@ckeditor/ckeditor5-cloud-services/src/cloudservices"
 import Font from "@ckeditor/ckeditor5-font/src/font";
 
 import Fullscreen from "../plugin/fullscreen/fullscreen";
+import MyBtn from "../plugin/fullscreen/mybtn";
+import SimpleBox from "../plugin/simplebox/simplebox";
 
 import "./style.css";
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase {
+}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-  Essentials,
-  // UploadAdapter,
-  Autoformat,
-  Bold,
-  Italic,
-  Underline,
-  HorizontalLine,
-  BlockQuote,
-  // CKFinder,
-  CloudServices,
-  // EasyImage,
-  Heading,
-  Image,
-  ImageCaption,
-  ImageStyle,
-  ImageToolbar,
-  ImageUpload,
-  Indent,
-  Link,
-  List,
-  MediaEmbed,
-  Paragraph,
-  PasteFromOffice,
-  Table,
-  TableToolbar,
-  TextTransformation,
-  Font,
-  Fullscreen,
+    Essentials,
+    // UploadAdapter,
+    Autoformat,
+    Bold,
+    Italic,
+    Underline,
+    HorizontalLine,
+    BlockQuote,
+    // CKFinder,
+    CloudServices,
+    // EasyImage,
+    Heading,
+    Image,
+    ImageCaption,
+    ImageStyle,
+    ImageToolbar,
+    ImageUpload,
+    Indent,
+    Link,
+    List,
+    MediaEmbed,
+    Paragraph,
+    PasteFromOffice,
+    Table,
+    TableToolbar,
+    TextTransformation,
+    Font,
+    Fullscreen,
+    MyBtn,
+    SimpleBox
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-  toolbar: {
-    items: [
-      "fullscreen",
-      "|",
-      "heading",
-      "|",
-      "bold",
-      "italic",
-      "underline",
-      "link",
-      "|",
-      "imageUpload",
-      "blockQuote",
-      "insertTable",
-      "mediaEmbed",
-      "|",
-      "fontColor",
-      "fontBackgroundColor",
-      "fontSize",
-      "fontFamily",
-      "|",
-      "bulletedList",
-      "numberedList",
-      "indent",
-      "outdent",
-      "horizontalLine",
-      "|",
-      "undo",
-      "redo",
-    ],
-  },
-  image: {
-    toolbar: ["imageTextAlternative", "imageStyle:block", "imageStyle:side"],
-  },
-  table: {
-    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-  },
-  link: {
-    decorators: {
-      addTargetToLinks: {
-        mode: "manual",
-        label: "Open in a new tab",
-        attributes: {
-          target: "_blank",
-          rel: "noopener noreferrer",
-        },
-      },
+    toolbar: {
+        items: [
+            "fullscreen",
+            "myBtn",
+            "simpleBox",
+            "|",
+            "heading",
+            "|",
+            "bold",
+            "italic",
+            "underline",
+            "link",
+            "|",
+            "imageUpload",
+            "blockQuote",
+            "insertTable",
+            "mediaEmbed",
+            "|",
+            "fontColor",
+            "fontBackgroundColor",
+            "fontSize",
+            "fontFamily",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "indent",
+            "outdent",
+            "horizontalLine",
+            "|",
+            "undo",
+            "redo",
+        ],
     },
-  },
-  placeholder: "請輸入內容...",
-  // This value must be kept in sync with the language defined in webpack.config.js.
-  language: "zh",
+    image: {
+        toolbar: ["imageTextAlternative", "imageStyle:block", "imageStyle:side"],
+    },
+    table: {
+        contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+    },
+    link: {
+        decorators: {
+            addTargetToLinks: {
+                mode: "manual",
+                label: "Open in a new tab",
+                attributes: {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                },
+            },
+        },
+    },
+    placeholder: "請輸入內容...",
+    // This value must be kept in sync with the language defined in webpack.config.js.
+    language: "zh",
 };

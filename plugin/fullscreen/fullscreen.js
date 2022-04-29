@@ -1,6 +1,6 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-
+    
 
 export default class Fullscreen extends Plugin {
 
@@ -15,12 +15,14 @@ export default class Fullscreen extends Plugin {
             const view = new ButtonView( locale );
             let isFullscreen = false;
             
+            // 建立一個按鈕
             view.set( {
                 label: 'Fullscreen',
                 class: 'fullscreen-toggle',
                 tooltip: true
             } );
             
+            // 點擊按鈕的事件
             view.on( 'execute', () => {
                 let ckEditor = editor.ui.view.element;
                 if (isFullscreen) {
